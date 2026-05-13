@@ -1,0 +1,10 @@
+
+services:
+  app:
+    build: .
+    env_file:
+      - .env.${NODE_ENV}
+    ports:
+      - 5000:5000
+    restart: unless-stopped
+    network_mode: "host"

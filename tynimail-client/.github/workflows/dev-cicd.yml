@@ -1,0 +1,78 @@
+name: CI/CD for tynimail-client
+on:
+  push:
+    branches: "dev"
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    
+    env:
+      DEPLOY_FOLDER: /var/www/tynimail-client-dev
+      TEMP_FOLDER: /home/ubuntu/tynimail-client
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install project dependencies
+        run: npm install --force
+      
+      - name: Validation of the build
+        run: npm run build
+
+      - name: Remove node_modules before transfer
+        run: rm -rf node_modules
+
+      - name: Setup SSH key
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > ssh_key
+          chmod 600 ssh_key
+          echo "${{ secrets.SSH_KEY }}"
+
+      - name: Create temporary directory on server
+        run: |
+          ssh -i ssh_key -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "
+            mkdir -p ${{ env.TEMP_FOLDER }}
+            echo 'Temporary directory created'
+          "
+
+      - name: Copy source code to server
+        run: |
+          echo "Copying files to ${{ secrets.SERVER_IP }}:${{ env.TEMP_FOLDER }}"
+          scp -i ssh_key -o StrictHostKeyChecking=no -r ./dist ${{ secrets.USER }}@${{ secrets.SERVER_IP }}:${{ env.TEMP_FOLDER }}/
+          echo "Files copied successfully"
+
+      - name: Deploy application files
+        run: |
+          ssh -i ssh_key -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "
+            echo 'Copying files to deployment directory...'
+            sudo cp -r ${{ env.TEMP_FOLDER }}/dist/* ${{ env.DEPLOY_FOLDER }}/
+            echo 'Application files deployed'
+          "
+
+      - name: Restart Nginx
+        run: |
+          ssh -i ssh_key -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "
+            echo 'Reloading Nginx...'
+            sudo systemctl reload nginx
+            echo 'Nginx reloaded'
+          "
+
+      - name: Cleanup temporary files
+        run: |
+          ssh -i ssh_key -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "
+            rm -rf ${{ env.TEMP_FOLDER }}
+            echo 'Temporary files cleaned up'
+          "
+          rm -f ssh_key
+          echo "Local SSH key removed"
+
+      - name: Deployment complete
+        run: |
+          echo "Deployment to ${{ secrets.SERVER_IP }} completed successfully!"
