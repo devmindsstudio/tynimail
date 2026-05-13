@@ -1,0 +1,440 @@
+#mly-editor .ProseMirror {
+  max-width: 100% !important;
+}
+
+.toobarclass > div {
+  background-color: var(--color-muted);
+}
+.toobarclass > div button {
+  /* background-color: red;
+  color: var(--color-primary); */
+}
+.toobarclass > div button:hover {
+  /* background-color: green; */
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+.tippy-content button:hover {
+  /* background-color: green; */
+  color: var(--color-background);
+  background-color: var(--color-foreground);
+}
+
+.tippy-content > div {
+  background-color: var(--color-background);
+}
+.body-class div.mly-editor {
+  background-color: var(--color-background) !important;
+  color: var(--color-foreground);
+}
+.body-class div.mly-editor > label {
+  color: var(--color-foreground);
+}
+.body-class .tippy-content button[aria-haspopup="dialog"] {
+  background-color: var(--color-background) !important;
+  color: var(--color-foreground) !important;
+}
+/* .body-class .tippy-content button svg {
+  color: var(--color-foreground) !important;
+} */
+
+.body-class div.mly-editor > button {
+  background-color: var(--color-muted-foreground);
+  color: var(--color-muted) !important;
+}
+.body-class div.mly-editor > button svg {
+  color: var(--color-muted) !important;
+}
+
+div.mly-editor button {
+  background-color: var(--color-background);
+  /* color: var(--color-foreground) !important; */
+}
+/* div.mly-editor button {
+  color: var(--color-foreground);
+}
+div.mly-editor button:hover{
+  background-color: var(--color-background);
+
+} */
+
+div.mly-editor button span.mly\:text-slate-600 {
+  /* background-color: var(--color-muted-foreground); */
+
+  color: var(--color-foreground) !important;
+}
+
+/* 
+.maily-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.maily-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  flex: 1;
+}
+
+.editor-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.editor-subtitle {
+  margin: 0.5rem 0 0 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+  background: #f7f7ff;
+  transform: translateY(-2px);
+}
+
+.editor-wrapper {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  min-height: 600px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.editor-wrapper .ProseMirror {
+  min-height: 500px;
+  padding: 2rem;
+  border: 2px dashed #e0e0e0;
+  border-radius: 12px;
+  transition: border-color 0.3s ease;
+}
+
+.editor-wrapper .ProseMirror:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.maily-footer {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.footer-info {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f7f7ff;
+  border: 1px solid #e0e0ff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.info-badge code {
+  background: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: "Monaco", "Courier New", monospace;
+  font-weight: 600;
+  color: #667eea;
+  border: 1px solid #e0e0ff;
+}
+
+@media (max-width: 768px) {
+  .maily-container {
+    padding: 1rem;
+  }
+
+  .maily-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .editor-wrapper {
+    padding: 1rem;
+  }
+
+  .editor-wrapper .ProseMirror {
+    padding: 1rem;
+    min-height: 400px;
+  }
+
+  .editor-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.editor-wrapper .ProseMirror::-webkit-scrollbar {
+  width: 8px;
+}
+
+.editor-wrapper .ProseMirror::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.editor-wrapper .ProseMirror::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+.editor-wrapper .ProseMirror::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.maily-slash-command-menu {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+}
+
+.maily-variable-suggestion {
+  background: #f7f7ff;
+  border: 1px solid #e0e0ff;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.maily-variable-suggestion:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(4px);
+} */
+/* Global CSS file mein add karein */
+/* [data-tippy-root] {
+  visibility: visible !important;
+}
+
+[data-tippy-root] > div {
+  pointer-events: auto !important;
+}
+
+.tippy-box {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+div[style*="pointer-events: none"] {
+  pointer-events: auto !important;
+} */
+
+/* .tippy-box .tippy-content > div {
+  background-color: red !important;
+  padding: 10px;
+} */
+/* 
+.tippy-box .tippy-content button.mly-editor {
+  background-color: aquamarine !important;
+  width: 100px !important;
+  height: 100px !important;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+} */
+/* .tippy-box .tippy-content button.mly-editor {
+  background-color: yellow !important;
+  width: 100px !important;
+  height: 100px !important;
+} */
+/* .tippy-box .tippy-content button.mly-editor svg {
+  width: 20px !important;
+  height: 20px !important;
+} */
+
+#tippy-5 {
+  padding: 0 !important;
+  left: 0 !important;
+  /* width: fit-content !important; */
+}
+#tippy-5 [class*="mly:visible"] {
+  /* background-color: red !important; */
+  padding: 0 0 !important;
+  border-radius: 5px;
+}
+
+/* svg[class="mly:text-midnight-gray"] {
+  color: red !important ;
+} */
+.mly\:text-midnight-gray {
+  color: var(--color-foreground) !important;
+}
+
+/* .mly:text-midnight-gray {
+  color: red
+} */
+
+/* button svg[class="mly:text-midnight-gray"] {
+  color: red !important;
+} */
+div[data-state="delayed-open"],
+div[data-state="instant-open"] {
+  background-color: var(--color-background) !important;
+  padding: 5px !important;
+}
+
+#tippy-5 [class*="mly:visible"] button {
+  background-color: var(--color-background) !important;
+  /* background-color: white !important; */
+  padding: 10px !important;
+  width: 100% !important;
+  /* width: 30px !important;
+  height: 30px !important; */
+  border-radius: 0 !important;
+  /* background-color: red !important; */
+}
+
+#tippy-5 [class*="mly:visible"] button svg {
+  width: 20px !important;
+  height: 20px !important;
+  /* background-color: var(--color-background) !important; */
+
+  /* border: 1px solid var(--color-input) !important; */
+  font-size: 20px !important;
+  stroke: var(--color-foreground) !important;
+}
+
+#tippy-5 div[data-side="bottom"] button {
+  color: var(--color-foreground) !important;
+}
+
+#slash-command > span {
+  background-color: var(--color-background);
+  border-color: var(--color-input);
+}
+#slash-command > div {
+  background-color: var(--color-background);
+  padding: 16px;
+}
+
+#slash-command > div button {
+  background-color: var(--color-muted) !important;
+  color: var(--color-foreground);
+}
+
+.react-renderer > div {
+  border-color: var(--color-input);
+}
+
+#slash-command > div button:hover {
+  background-color: var(--color-muted) !important;
+  color: var(--color-foreground);
+}
+#slash-command > div button div:nth-child(1) svg {
+  width: 20px;
+  height: 20px;
+}
+
+.react-renderer > div > div:nth-child(2) {
+  background: var(--color-background);
+  border-color: var(--color-input);
+}
+/* .react-renderer > div > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 20px !important;
+} */
+div[class*="mly:space-y-0.5"] {
+  display: flex;
+  flex-direction: column;
+  gap: 8px !important;
+}
+
+.mly\:active\:bg-soft-gray{
+  background-color: var(--color-background);
+}

@@ -1,0 +1,240 @@
+.gjs-cui.gjs-cv-canvas.gjs-no-touch-actions {
+  background-color: var(--color-background) !important;
+}
+.gs-layout-panel {
+  padding: 16px !important;
+  background-color: var(--color-sidebar-backgdoud) !important;
+}
+
+.gs-block-manager__header,
+.gs-layout-panel .gs-layout-panel__header .gs-utl-card-title {
+  padding: 0 !important;
+}
+
+.gs-layout-panel__header .gs-layout-panel__title {
+  color: var(--color-foreground) !important;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.gs-layout-panel__content .gs-cmp-tabs {
+  display: none;
+}
+.gs-layout-panel__content .gs-input-field {
+  margin: 24px 0 !important;
+}
+.gs-layout-panel__content .gs-input-field > div {
+  height: 32px;
+  border-color: var(--color-input) !important;
+  border-radius: 6px !important;
+  background-color: transparent;
+}
+.gs-cmp-row.gs-theme-cl-bg.gs-utl-bg-white {
+  /* height: 90vh !important; */
+  background-color: var(--color-sidebar-backgdoud) !important;
+}
+.gs-block-manager__content {
+  background: var(--color-muted) !important;
+  /* margin: 0 20px; */
+
+  border: none;
+  border-radius: 12px;
+  padding: 0 !important;
+}
+.gs-block-manager__content .gs-cmp-accordion-handler__content-label {
+  color: var(--color-foreground);
+  font-size: 14px;
+  line-height: 20px;
+  font-family: var(--font-inter);
+  font-weight: 500;
+}
+.gs-block-manager__content .gs-cmp-accordion-handler {
+  padding: 12px;
+  background-color: var(--color-muted) !important;
+}
+.gs-utl-border-gray-300 {
+  border-color: var(--color-input) !important;
+}
+.gs-block-manager__content .gs-utl-text-center {
+  color: var(--color-foreground) !important;
+  font-size: 14px;
+  font-family: var(--font-inter);
+  line-height: 20px;
+}
+.gs-block-manager__content .gs-block-item {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-input);
+  border-radius: 6px;
+  padding: 12px !important;
+  gap: 12px;
+}
+.gs-block-manager__content .gs-block-item:hover {
+  background-color: var(--color-muted-50) !important;
+}
+
+.gs-block-manager__content .gs-utl-block-media {
+  width: 20px;
+  height: 20px;
+  color: var(--color-muted-foreground);
+}
+.gs-block-manager__content .gs-block-manager__blocks {
+  /* background-color: red; */
+  padding: 12px;
+}
+.gs-cmp-tooltip .gs-cmp-tooltip-target button {
+  width: 40px;
+  height: 40px;
+}
+
+.gs-cmp-tooltip .gs-cmp-tooltip-target button {
+  color: var(--color-gray-500);
+}
+.gs-cmp-tooltip .gs-cmp-tooltip-target button.gs-utl-bg-violet-400 {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-foreground);
+}
+.gs-cmp-tooltip .gs-cmp-tooltip-target:hover {
+  /* background-color: red !important; */
+  background-color: var(--color-muted) !important;
+}
+.gs-sidebar-left {
+  min-width: 71px !important;
+  max-width: 71px !important;
+}
+
+.gs-sidebar-bottom .gs-cmp-tooltip:nth-child(2),
+.gs-sidebar-bottom .gs-cmp-tooltip:nth-child(3),
+.gs-sidebar-bottom .gs-cmp-tooltip:nth-child(5),
+.gs-sidebar-left .gs-cmp-tooltip:nth-child(2),
+.gs-sidebar-left .gs-cmp-tooltip:nth-child(3) {
+  display: none;
+}
+.gs-asset-manager__header .gs-utl-flex.gs-utl-flex-wrap,
+.gs-asset-manager__header .gs-utl-flex.gs-utl-flex-wrap > div {
+  width: 100% !important;
+}
+
+.gs-cmp-modal-content
+  .gs-asset-manager__header
+  .gs-utl-flex.gs-utl-flex-wrap
+  > div {
+  width: auto !important;
+}
+.gs-block-item .gs-utl-border-2.gs-utl-border-current {
+  background-color: var(--color-muted-foreground) !important;
+  border-radius: 4px;
+  border: none;
+}
+
+/* //// center  */
+
+/* right */
+
+.gs-sidebar-right {
+  /* background-color: red !important; */
+  background-color: var(--color-secondary) !important;
+  max-width: 312px !important;
+  width: 100% !important;
+}
+.gs-sidebar-right .gs-style-manager {
+  display: grid;
+  gap: 12px;
+  padding: 12px !important;
+}
+
+.gs-sidebar-right .gs-cmp-accordion button {
+  background-color: var(--color-card);
+  border-radius: 6px;
+  border: none;
+  padding: 12px 0;
+}
+
+.gs-sidebar-right .gs-cmp-accordion {
+  background-color: var(--color-card);
+  padding: 0 12px;
+  border-radius: 6px;
+}
+
+.gs-sidebar-right .gs-cmp-traits-provider {
+  padding: 12px !important;
+  padding-bottom: 0 !important;
+}
+.gs-sidebar-right .gs-cmp-accordion-content {
+  border-top: 1px solid var(--color-input);
+  background-color: transparent;
+  /* padding: 12px; */
+  padding: 12px 0;
+}
+
+.gs-sidebar-right .gs-cmp-accordion-handler__content {
+  color: var(--color-foreground) !important;
+  font-family: var(--color-inter);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.gs-style-manager-sector-content {
+  padding: 0 !important;
+}
+.gs-style-manager-sector-content .gs-utl-grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.gs-style-manager-sector-content .gs-input-container .gs-select-field {
+  line-height: 0 !important;
+}
+.gs-asset-manager__header .gs-utl-card-body li div > * {
+  color: var(--color-muted) !important;
+}
+/* .gs-cmp-accordion-content .gs-utl-card-body {
+  background-color: var(--color-foreground) !important;
+} */
+
+/* .gjs-cv-unscale {
+  background-color: var(--color-white) !important;
+} */
+.gs-input-container,
+.gs-theme-cl-cmp {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  /* color: white; */
+}
+
+.gs-theme-cl-cmpBr {
+  border-color: var(--color-muted-foreground) !important  ;
+}
+
+.gs-theme-cl-cmp .gs-utl-flex {
+  gap: 9px !important;
+}
+
+.gs-theme-cl-cmp .gs-utl-flex button {
+  background-color: var(--color-muted-foreground);
+  /* background-color: var(--color-black); */
+  /* color: red; */
+  height: 28px !important;
+  width: 28px !important;
+  border-radius: 5px;
+}
+
+/* button */
+.gs-asset-manager button[type="button"] {
+  background-color: var(--color-primary) !important;
+  color: var(--primary-foreground);
+}
+
+.gs-sidebar-bottom {
+  background-color: var(--color-background) !important;
+  min-height: 52px !important;
+  z-index: 100 !important;
+}
+
+.gs-utl-p-1.gs-utl-max-w-full.gs-utl-flex.gs-utl-flex-nowrap.gs-utl-space-x-2.gs-utl-items-center,
+.gs-cmp-modal-container {
+  background-color: var(--color-background) !important;
+}
+
+.gjs-rte-toolbar .gs-utl-card{
+  background-color: var(--color-background) !important;
+}

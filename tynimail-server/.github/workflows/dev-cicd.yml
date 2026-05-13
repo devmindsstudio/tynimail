@@ -1,0 +1,68 @@
+name: CI/CD for nodejs-backend
+on:
+  push:
+    branches: "dev"
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    env:
+      APP_NAME: tynimail-server-dev
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+       
+      - name: Create environment file
+        run: |
+          echo "Creating .env.${NODE_ENV:-development} file..."
+          touch .env.development
+      
+      - name: Validate docker-compose configuration
+        run: |
+          echo "Validating docker-compose.yaml configuration..."
+          NODE_ENV=development docker compose config
+          echo "Configuration is valid"
+      
+      - name: Build Docker image
+        run: |
+          echo "Building Docker image..."
+          NODE_ENV=development docker compose build --no-cache
+          echo "Docker build completed successfully"
+            
+      - name: Cleanup
+        if: always()
+        run: |
+          echo "Stopping and cleaning up containers..."
+          NODE_ENV=development docker compose down
+          echo "Cleanup completed"
+      
+      - name: Build validation complete
+        run: |
+          echo "Docker build validation completed successfully!"
+      
+      - name: Setup SSH key
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > ssh_key
+          chmod 600 ssh_key
+      
+      - name: Deploy to server
+        run: |
+          ssh -i ssh_key -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "
+            echo 'Navigating to deployment directory...'
+            cd /var/www/tynimail-server
+            echo 'Pulling latest code...'
+            git fetch origin
+            git reset --hard origin/dev
+            echo 'Code updated successfully'
+            echo 'Building and starting Docker containers...'
+            NODE_ENV=development docker compose up -d --build
+            echo 'Containers started successfully'
+            NODE_ENV=development docker compose exec -T app sh -c 'cd /app && npm run migrate:dev'
+            echo 'Migrations ran successfully'
+            sudo systemctl reload nginx
+          "
+          
+      - name: Cleanup SSH key
+        if: always()
+        run: |
+          rm -f ssh_key
+          echo "SSH key removed"

@@ -1,0 +1,129 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap");
+@font-face {
+  font-family: "font-anton";
+  src:
+    url("/fonts/anton/Anton-Regular.ttf") format("truetype"),
+    url("/fonts/anton/Anton-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font-bukhari";
+  src:
+    url("/fonts/bukhari_script/Bukhari\ Script.ttf") format("truetype"),
+    url("/fonts/bukhari_script/Bukhari\ Script.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* 
+input:focus-visible {
+  box-shadow: none !important;
+} */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* -webkit-text-fill-color: transparent; */
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.shadow-sidebar1 {
+  box-shadow: 0px 4px 6px -1px #0000001a;
+}
+.shadow-buttons {
+  box-shadow: 0px 1px 3px 0px #0000000d;
+}
+
+.gs-cmp-editor-topbar {
+  display: none !important;
+}
+
+.gs-cmp-sidebar-right ul.gs-utl-cursor-default .gs-utl-cursor-default {
+  background-color: var(--color-secondary);
+}
+
+.gs-cmp-sidebar-right .gs-cmp-file-field-content,
+.gs-cmp-sidebar-right .gs-select-field .gs-utl-card,
+.gs-cmp-sidebar-right .gs-cmp-sector-row {
+  background-color: var(--color-background) !important;
+}
+ul.gs-utl-cursor-default .gs-utl-card-body li {
+  background-color: var(--color-background) !important;
+}
+.div[aria-haspopup="listbox"] {
+  /* display: none; */
+  background-color: red !important;
+}
+
+.virtuoso-grid-item button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-side-barscrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-foreground) !important;
+  color: var(--color-foreground) !important;
+  background-color: var(--color-primary) !important;
+
+  /* Optional: Add a transition delay to prevent the color from flashing */
+  transition: background-color 5000s ease-in-out 0s;
+  opacity: 1;
+}
+
+.text-outline {
+  color: white; /* Text color */
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.input-custom__menu,
+.input-custom__control--is-focused,
+.css-t3ipsp-control:hover,
+.css-13cymwt-control {
+  border-color: var(--color-border) !important;
+  background-color: var(--color-background) !important;
+  box-shadow: none !important;
+}
+.css-13cymwt-control {
+  border-radius: 8px;
+  height: 44px;
+  min-height: 44px;
+}
+
+.css-1nmdiq5-menu {
+  background-color: var(--color-background) !important;
+  border: 1px solid var(--color-input) !important;
+  box-shadow: none !important;
+}
+
+.css-d7l1ni-option {
+  background-color: var(--color-muted) !important;
+}
+.css-tr4s17-option {
+  background-color: var(--color-muted) !important;
+  color: var(--color-foreground) !important;
+}
